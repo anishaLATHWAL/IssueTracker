@@ -20,7 +20,7 @@ const ProtectedRoute = ({ children }) => {
   useEffect(() => {
     if (!token && !hasShownToast.current) {
       handleError("Login required!");
-      hasShownToast.current = true; // show toast only once per unauthorized access
+      hasShownToast.current = true; 
     }
   }, [token, location]);
 
@@ -33,17 +33,13 @@ function App() {
       <Header />
 
       <Routes>
-        {/* Default Route → Redirect to Home */}
         <Route path="/" element={<Navigate to="/home" />} />
 
-        {/* Public Auth Routes */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 
-        {/* Public Route → Anyone can view Dashboard */}
         <Route path="/home" element={<Dashboard />} />
 
-        {/* Protected Route → Only logged in users can post */}
         <Route
           path="/post"
           element={
