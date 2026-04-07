@@ -17,8 +17,6 @@ const ProtectedRoute = ({ children }) => {
   const hasShownToast = useRef(false);
   const location = useLocation();
 
-
-
   useEffect(() => {
     if (!token && !hasShownToast.current) {
       handleError("Login required!");
