@@ -11,7 +11,7 @@ import Profile from "./pages/profile/Profile";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminRoute from "./pages/admin/AdminRoute";
 
-// ✅ Protected Route Component
+
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem("token");
   const hasShownToast = useRef(false);
